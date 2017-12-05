@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import { TaskListComponent } from './task-list/task-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule }    from '@angular/http';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TaskListComponent
+    TaskListComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

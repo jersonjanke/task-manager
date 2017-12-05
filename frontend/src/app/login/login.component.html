@@ -1,0 +1,10 @@
+<div>
+  <form #f="ngForm" (ngSubmit)="getLogin(f)">
+    <label>Email</label>
+    <input name="email" ngModel type="text">
+    <label>Password</label>
+    <input name="password" ngModel type="password">
+    <button type="submit">Logar</button>
+  </form>
+  <pre>{{ login }}</pre>
+</div>

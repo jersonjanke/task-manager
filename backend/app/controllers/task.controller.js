@@ -1,11 +1,6 @@
 var Taks = require('../models/task.model.js');
 
 exports.create = function(req, res) {
-
-    if(!req.body.content) {
-        res.status(400).send({message: "Task con not be empty"})
-    }
-
     var task = new Taks(
         {
             title: req.body.title,
@@ -14,10 +9,8 @@ exports.create = function(req, res) {
         }
     );
 
-    task.save(function(err, data) {
-        console.log(data);
+    task.save(function(err, data) {        
         if(err) {
-            console.log(err);
             res.status(500).send({message: "Some error ocuured while creating"})
         } else {
             res.send(data);

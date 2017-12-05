@@ -23,13 +23,11 @@ export class TaskListComponent implements OnInit {
         .map((res: Response) => res.json())
         .subscribe(data => {
           this.data = data;
-          console.log(this.data);
         });
     }
   
     getAdd(form) {
      this._http.post('http://localhost:3000/tasks', form.value).subscribe(res => {
-       console.log(res);
        this.getMyBlog();
      });
     }
@@ -37,8 +35,7 @@ export class TaskListComponent implements OnInit {
     delete(id) {
      this._http.delete('http://localhost:3000/tasks/' + id )
        .map((res: Response) => res.json())
-       .subscribe(data => {
-         console.log(data);
+       .subscribe(data => {         
          this.getMyBlog();
        });
     }
