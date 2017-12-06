@@ -7,13 +7,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 import { LoginComponent } from './login/login.component';
 
+import { AppRoutingModule } from './app-routing.module';
+import { UserComponent } from './user/user.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     TaskListComponent,
-    LoginComponent
+    LoginComponent,
+    UserComponent
   ],
-  imports: [
+  imports: [  
+    AppRoutingModule,
     BrowserModule,
     HttpModule,
     FormsModule, 

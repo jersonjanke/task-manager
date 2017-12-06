@@ -10,7 +10,7 @@ import 'rxjs/add/operator/map';
 export class TaskListComponent implements OnInit {
 
   constructor(private _http: Http) {
-    this.getMyBlog();
+    this.getData();
   }
 
   ngOnInit() {
@@ -18,8 +18,8 @@ export class TaskListComponent implements OnInit {
 
   data: any = null;
   
-    private getMyBlog() {
-      return this._http.get('http://localhost:3000/tasks')
+    private getData() {      
+      return this._http.get(`http://localhost:3000/tasks/${localStorage.getItem('user')}`)
         .map((res: Response) => res.json())
         .subscribe(data => {
           this.data = data;
@@ -27,8 +27,9 @@ export class TaskListComponent implements OnInit {
     }
   
     getAdd(form) {
+      form.value.user = localStorage.getItem('user');
      this._http.post('http://localhost:3000/tasks', form.value).subscribe(res => {
-       this.getMyBlog();
+       this.getData();
      });
     }
   
@@ -36,7 +37,7 @@ export class TaskListComponent implements OnInit {
      this._http.delete('http://localhost:3000/tasks/' + id )
        .map((res: Response) => res.json())
        .subscribe(data => {         
-         this.getMyBlog();
+         this.getData();
        });
     }
 }

@@ -5,7 +5,8 @@ exports.create = function(req, res) {
         {
             title: req.body.title,
             content: req.body.content,
-            status: req.body.status
+            status: req.body.status,
+            user: req.body.user
         }
     );
 
@@ -19,7 +20,7 @@ exports.create = function(req, res) {
 }
 
 exports.findAll = function(req, res) {
-    Taks.find(function(err, taks) {
+    Taks.find({ user: req.params.user },function(err, taks) {
         if(err) {
             res.status(500).send({message: "Some erro ocuured while findAll"})
         } else {
@@ -48,6 +49,7 @@ exports.update = function(req, res) {
         task.title = req.body.title;
         task.content = req.body.content;
         task.status = req.body.status;
+        task.user = req.body.user;
 
         task.save(function(err, data){
             if(err) {

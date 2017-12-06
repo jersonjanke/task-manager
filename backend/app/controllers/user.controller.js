@@ -75,9 +75,9 @@ exports.login = function(req, res) {
             res.status(500).send({message: "error login"});
         } else {
             if(data.length > 0)  {
-                res.send({login: true});
+                res.send({login: true, user: req.body.email});
             } else {
-                res.send({login: false});   
+                res.send({login: false, user: req.body.email});   
             }
         }
     });
