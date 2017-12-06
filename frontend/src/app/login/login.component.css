@@ -1,0 +1,65 @@
+body, h1, h2, h3, p, ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+form {    
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+.login {
+    width: 540px;
+    height: 266px;
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    background-color: #eee;
+    padding: 10px;
+    box-shadow: 1px 1px 15px 2px;
+}
+
+button {
+    background: #252525;
+    font-family: Georgia, serif;
+    border: none;
+    text-transform: uppercase;
+    width: 140px;
+    padding: 5px;
+    color: #fff;
+    float: left;
+    cursor: pointer;
+}
+
+a {
+    margin-top: 10px;    
+    text-decoration: none;    
+    display: flex;
+    color: #252525;  
+}
+
+input {
+    box-sizing: border-box;    
+    border: 1px solid #252525;
+    background: none;
+    font-size: 0.8em;    
+    /* font-family: Georgia, Times, serif; */
+    padding: 10px;
+}
+
+h2 {    
+    font-size: 1.50em;   
+    margin-left: 10px; 
+}
+
+.message {
+    font-size: 1.1em;
+    text-align: left;
+    color: red;
+}

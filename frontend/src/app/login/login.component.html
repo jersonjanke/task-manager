@@ -1,11 +1,17 @@
-<div>
-  <form #f="ngForm" (ngSubmit)="getLogin(f)">
-    <label>Email</label>
-    <input name="email" ngModel type="text">
-    <label>Password</label>
-    <input name="password" ngModel type="password">
-    <button type="submit">Logar</button>
-    <a routerLink="/user">New User</a>
-  </form>
-  <pre>{{ login }}</pre>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="login">
+      <h2>Access your account</h2>
+      <form #f="ngForm" (ngSubmit)="getLogin(f)">          
+          <input name="email" [(ngModel)]="email" type="text" placeholder="Email">
+          <input name="password" [(ngModel)]="password" type="password" placeholder="Password">          
+          <button type="submit">
+            Login
+            <i *ngIf="isLoading" class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+          </button>                    
+          <a routerLink="/user">Create account</a>          
+          <p *ngIf="login === false" class="message">Email or password incorrect!</p>          
+        </form>
+      </div>  
+  </div>  
 </div>
