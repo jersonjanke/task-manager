@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon server.js",
+    "production": "pm2 start server.js --name backend"
   },
   "author": "Jerson Janke",
   "license": "ISC",
@@ -12,6 +13,10 @@
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "express": "^4.16.2",
-    "mongoose": "^4.13.6"
+    "mongoose": "^4.13.6",
+    "pm2": "^2.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.5"
   }
 }
