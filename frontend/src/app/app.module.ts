@@ -9,13 +9,17 @@ import { LoginComponent } from './login/login.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { UserComponent } from './user/user.component';
+import { HeaderComponent } from './header/header.component';
+import { TaskCrudComponent } from './task-crud/task-crud.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TaskListComponent,
     LoginComponent,
-    UserComponent
+    UserComponent,
+    HeaderComponent,
+    TaskCrudComponent
   ],
   imports: [  
     AppRoutingModule,

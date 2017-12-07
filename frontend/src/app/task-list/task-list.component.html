@@ -1,18 +1,11 @@
-<div>
-  <form #f="ngForm" (ngSubmit)="getAdd(f)" novalidate>
-    <label>Title</label>
-    <input name="title" ngModel type="text">
-    <label>Content</label>
-    <input name="content" ngModel type="text">
-    <label>Status</label>
-    <input name="status" checked="false" ngModel type="checkbox">
-    <button>Add</button>
-  </form>
-  <hr>
+<div class="col-xs-12">
+    <h3>Task list</h3>
+    <hr>
+</div>    
+<div class="col-xs-12">
   <div *ngFor="let task of data">
-    {{ task.title }}
-    {{ task.content }}
-    {{ task.status }}
-    <button (click)="delete(task._id)">Delete</button>
+      {{ task.title }}
+      {{ task.content }}
+      {{ task.status }}        
   </div>
 </div>
