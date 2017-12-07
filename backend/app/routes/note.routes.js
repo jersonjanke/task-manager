@@ -14,7 +14,7 @@ module.exports = function(app) {
     //TASK
     app.post('/tasks', task.create);
     app.get('/tasks/:user', task.findAll);
-    app.get('/tasks/:taskId', task.findOne);
+    app.get('/task-one/:taskId', task.findOne);
     app.put('/tasks/:taskId', task.update);
     app.delete('/tasks/:taskId', task.delete);
 

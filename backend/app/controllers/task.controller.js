@@ -29,7 +29,7 @@ exports.findAll = function(req, res) {
     });
 }
 
-exports.findOne = function(req, res) {
+exports.findOne = function(req, res) {    
     Taks.findById(req.params.taskId, function(err, data) {
         if(err) {
             res.status(500).send({message: "Could not retrieve note with id " + req.params.taskId});
