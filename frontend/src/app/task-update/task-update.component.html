@@ -1,0 +1,21 @@
+<div class="col-xs-12">
+    <h3>Update task</h3>
+    <hr>
+</div>    
+<div class="col-xs-12">
+  <form>
+    <label>Title</label>
+    <input class="form-control" name="title" [(ngModel)]="data.title" type="text">
+    <label>Content</label>
+    <textarea class="form-control" name="content" [(ngModel)]="data.content" rows="3"></textarea>    
+    <div class="form-check margin-top-10">
+        <label class="form-check-label">
+          <input name="status" checked="false" [(ngModel)]="data.status" type="checkbox" class="form-check-input">
+          Status
+        </label>
+      </div>    
+      <button (click)="update(data)" class="btn btn-success">Save</button>
+      <button (click)="delete(data._id)" class="btn btn-danger">Delete</button>
+      <button (click)="cancel()" class="btn btn-default">Cancel</button>
+  </form>
+</div>

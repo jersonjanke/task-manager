@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
+import { Router } from '@angular/router';
 import 'rxjs/add/operator/map';
 
 @Component({
@@ -9,7 +10,7 @@ import 'rxjs/add/operator/map';
 })
 export class TaskCrudComponent implements OnInit {
 
-  constructor(private _http: Http) { }
+  constructor(private _http: Http, private router: Router) { }
 
   ngOnInit() {}
 
@@ -26,7 +27,7 @@ export class TaskCrudComponent implements OnInit {
     getAdd(form) {
       form.value.user = localStorage.getItem('user');
      this._http.post('http://localhost:3000/tasks', form.value).subscribe(res => {
-       this.getData();
+        this.router.navigate(['/task-list']);
      });
     }
   
@@ -36,5 +37,9 @@ export class TaskCrudComponent implements OnInit {
        .subscribe(data => {         
          this.getData();
        });
+    }
+
+    cancel() {
+      this.router.navigate(['/task-list']);
     }
 }
